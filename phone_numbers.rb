@@ -1,8 +1,8 @@
 class PhoneNumber
-  atter_accessor :kind, :number
+  attr_accessor :kind, :number
 
   def to_s
-    #{kind}: #{number}
+    "#{kind}=> #{number}"
   end
 
 end
