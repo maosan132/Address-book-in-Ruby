@@ -72,7 +72,7 @@ class Contact
     
   end
 
-  def to_ss(format = 'full')
+  def to_s(format = 'full')
     case format
     when 'full'
       complete_name
