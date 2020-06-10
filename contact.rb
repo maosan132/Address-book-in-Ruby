@@ -94,7 +94,7 @@ mauricio.middle_name = 'Santos'
 mauricio.last_name = 'hoyos'
 mauricio.add_phone_number('Home', '44564-7878')
 mauricio.add_phone_number('Work', '65-445715')
-mauricio.add_address('home', 'main_street', '', 'Cali', 'VA', '760001')
+mauricio.add_address('home', 'main_street', ' ', 'Cali', 'VA', '760001')
 print 'I am '
 # puts mauricio.to_s
 # puts mauricio.to_s('first')
