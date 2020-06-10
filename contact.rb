@@ -1,12 +1,14 @@
 require 'pry'
 require './phone_numbers'
+require './address'
 class Contact
 
   attr_writer :first_name, :middle_name, :last_name  
-  attr_reader :phone_numbers
+  attr_reader :phone_numbers, :addresses
 
   def initialize
     @phone_numbers = []
+    @addresses = []
   end
 
   def add_phone_number (kind, number)
@@ -17,9 +19,25 @@ class Contact
 
   end
 
+  def add_address(kind, street_1, street_2, city, state, zip_code)
+    address = Address.new
+    address.kind = kind
+    address.street_1 = street_1
+    address.street_2 = street_2
+    address.city = city
+    address.state = state
+    address.zip_code = zip_code
+    addresses.push(address)
+  end
+
   def print_numbers
     puts "phone numbers"
     phone_numbers.each {|i| puts i}
+  end
+
+  def print_addresses
+    puts "Addresses"
+    addresses.each {|i| puts i.to_s('short')}
   end
 
   def first_name
@@ -76,6 +94,7 @@ mauricio.middle_name = 'Santos'
 mauricio.last_name = 'hoyos'
 mauricio.add_phone_number('Home', '44564-7878')
 mauricio.add_phone_number('Work', '65-445715')
+mauricio.add_address('home', 'main_street', '', 'Cali', 'VA', '760001')
 print 'I am '
 # puts mauricio.to_s
 # puts mauricio.to_s('first')
@@ -84,4 +103,5 @@ puts mauricio.complete_name
 puts mauricio.last_first
 puts mauricio.last_name + 'd'
 mauricio.print_numbers
-puts mauricio.phone_numbers[0]
+mauricio.phone_numbers[0]
+mauricio.print_addresses
